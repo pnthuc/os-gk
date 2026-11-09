@@ -1,0 +1,578 @@
+[
+  {
+    "chapter": 1,
+    "chapterName": "Ngôn ngữ chung của học máy",
+    "id": "1.1",
+    "level": "Ghi nhớ",
+    "question": "Ba quyết định thiết kế là gì?",
+    "answer": "Lớp giả thuyết chọn các hàm được phép, loss định nghĩa tốt/xấu, optimizer tìm tham số. Không thay một quyết định bằng tên của quyết định khác."
+  },
+  {
+    "chapter": 1,
+    "chapterName": "Ngôn ngữ chung của học máy",
+    "id": "1.2",
+    "level": "Thông hiểu",
+    "question": "Vì sao tên lớp bằng số chưa làm bài toán thành hồi quy?",
+    "answer": "Các số có thể chỉ là mã. Cần xét ý nghĩa: chọn lớp rời rạc hay đo đại lượng có khoảng cách và đơn vị."
+  },
+  {
+    "chapter": 1,
+    "chapterName": "Ngôn ngữ chung của học máy",
+    "id": "1.3",
+    "level": "Vận dụng",
+    "question": "Phân loại ba tác vụ: gian lận, giá nhà, bản dịch.",
+    "answer": "Gian lận là nhị phân, giá nhà là hồi quy, bản dịch là đầu ra chuỗi có cấu trúc. Cùng kiểu đầu vào không buộc cùng loại đầu ra."
+  },
+  {
+    "chapter": 1,
+    "chapterName": "Ngôn ngữ chung của học máy",
+    "id": "1.4",
+    "level": "Phân tích",
+    "question": "Một mô hình đoán nhanh có chứng minh bước học ít tốn kém?",
+    "answer": "Không. Inference và training khác nhau. Training có thể cần nhiều vòng tính gradient, còn inference chỉ chạy mô hình đã chốt."
+  },
+  {
+    "chapter": 1,
+    "chapterName": "Ngôn ngữ chung của học máy",
+    "id": "1.5",
+    "level": "Đánh giá",
+    "question": "Muốn phân loại ảnh mới, cần chốt gì trước khi chọn mạng?",
+    "answer": "Xác định nhãn, dữ liệu đại diện, cách chia/metric, rồi chọn lớp mô hình, loss và tối ưu phù hợp. Kiểm tra bằng dữ liệu mới."
+  },
+  {
+    "chapter": 2,
+    "chapterName": "Hồi quy tuyến tính và gradient descent",
+    "id": "2.1",
+    "level": "Ghi nhớ",
+    "question": "Phần dư và MSE là gì?",
+    "answer": "Phần dư bằng dự đoán trừ nhãn. MSE là trung bình bình phương phần dư, không phải bình phương trung bình phần dư."
+  },
+  {
+    "chapter": 2,
+    "chapterName": "Hồi quy tuyến tính và gradient descent",
+    "id": "2.2",
+    "level": "Thông hiểu",
+    "question": "Vì sao MSE nhạy với ngoại lai?",
+    "answer": "Sai lệch lớn bị bình phương nên đóng góp tăng nhanh. Gradient cũng tỷ lệ phần dư, kéo nghiệm theo các điểm lệch lớn."
+  },
+  {
+    "chapter": 2,
+    "chapterName": "Hồi quy tuyến tính và gradient descent",
+    "id": "2.3",
+    "level": "Vận dụng",
+    "question": "Từ trọng số không, dữ liệu (1,1),(2,3),(4,3), tốc độ học 0,1: bước đầu?",
+    "answer": "Gradient là (−14/3;−38/3). Trừ 0,1 lần gradient cho trọng số (0,4667;1,2667). Cần chia ba vì dùng trung bình."
+  },
+  {
+    "chapter": 2,
+    "chapterName": "Hồi quy tuyến tính và gradient descent",
+    "id": "2.4",
+    "level": "Phân tích",
+    "question": "Gradient bằng không có luôn nghĩa là loss bằng không?",
+    "answer": "Không. Ở nghiệm tốt nhất trong lớp, vẫn có thể còn sai số không thể khớp. Ví dụ ba điểm có MSE tối ưu 8/21."
+  },
+  {
+    "chapter": 2,
+    "chapterName": "Hồi quy tuyến tính và gradient descent",
+    "id": "2.5",
+    "level": "Đánh giá",
+    "question": "Đường thẳng train kém: nên tăng bước học hay thêm feature?",
+    "answer": "Trước hết xem tối ưu đã hội tụ chưa và dữ liệu có cấu trúc cong không. Hội tụ tốt nhưng lớp không biểu diễn được thì chỉnh biểu diễn, không chỉ bước học."
+  },
+  {
+    "chapter": 3,
+    "chapterName": "Phân loại tuyến tính và thiết kế loss",
+    "id": "3.1",
+    "level": "Ghi nhớ",
+    "question": "Margin nhị phân là gì?",
+    "answer": "Với nhãn âm/dương một, margin là nhãn nhân score. Margin dương là đúng dấu, nhưng hinge chỉ hết phạt khi đạt ít nhất một."
+  },
+  {
+    "chapter": 3,
+    "chapterName": "Phân loại tuyến tính và thiết kế loss",
+    "id": "3.2",
+    "level": "Thông hiểu",
+    "question": "Vì sao cần L2 cùng hinge trên dữ liệu tách được?",
+    "answer": "Tăng scale trọng số có thể tăng margin mà không đổi ranh giới. L2 kiểm soát độ lớn và tạo đánh đổi có ý nghĩa."
+  },
+  {
+    "chapter": 3,
+    "chapterName": "Phân loại tuyến tính và thiết kế loss",
+    "id": "3.3",
+    "level": "Vận dụng",
+    "question": "Nhãn −1, score −0,2: margin và hinge?",
+    "answer": "Margin bằng 0,2. Hinge là max(0;1−0,2)=0,8. Dự đoán đúng nhưng chưa đủ biên."
+  },
+  {
+    "chapter": 3,
+    "chapterName": "Phân loại tuyến tính và thiết kế loss",
+    "id": "3.4",
+    "level": "Phân tích",
+    "question": "Score (2;1;3), nhãn lớp một, biên một: hinge tổng?",
+    "answer": "Lớp hai góp max(0;1−2+1)=0, lớp ba góp max(0;3−2+1)=2. Tổng bằng hai."
+  },
+  {
+    "chapter": 3,
+    "chapterName": "Phân loại tuyến tính và thiết kế loss",
+    "id": "3.5",
+    "level": "Đánh giá",
+    "question": "Hình loss mượt hơn có đủ chứng minh luôn cho accuracy cao hơn?",
+    "answer": "Không. Độ mượt mô tả gradient, không thay thực nghiệm và điều kiện. Cần dữ liệu, cấu hình và đánh giá phù hợp."
+  },
+  {
+    "chapter": 4,
+    "chapterName": "Công bằng và Group DRO",
+    "id": "4.1",
+    "level": "Ghi nhớ",
+    "question": "Group DRO tối ưu gì trong ví dụ?",
+    "answer": "Tối thiểu hóa loss trung bình của nhóm có loss lớn nhất, thay vì trung bình theo mọi mẫu."
+  },
+  {
+    "chapter": 4,
+    "chapterName": "Công bằng và Group DRO",
+    "id": "4.2",
+    "level": "Thông hiểu",
+    "question": "Vì sao không dùng tổng loss nhóm rồi lấy max?",
+    "answer": "Nhóm lớn có thể trông tệ hơn chỉ vì nhiều mẫu. Trung bình trong nhóm phân biệt tỷ lệ mẫu với mức lỗi từng mẫu."
+  },
+  {
+    "chapter": 4,
+    "chapterName": "Công bằng và Group DRO",
+    "id": "4.3",
+    "level": "Vận dụng",
+    "question": "Tại w=1, loss nhóm A/B và chung bằng bao nhiêu?",
+    "answer": "A: (9+36)/2=22,5. B bằng không. Chung: (45+0)/6=7,5. Max nhóm bằng 22,5."
+  },
+  {
+    "chapter": 4,
+    "chapterName": "Công bằng và Group DRO",
+    "id": "4.4",
+    "level": "Phân tích",
+    "question": "Nhóm tệ nhất tại w=1 được cập nhật ra sao với tốc độ 0,01?",
+    "answer": "Gradient A bằng 5(1−4)=−15, nên w mới=1−0,01(−15)=1,15. Nhóm max có thể đổi sau các bước tiếp."
+  },
+  {
+    "chapter": 4,
+    "chapterName": "Công bằng và Group DRO",
+    "id": "4.5",
+    "level": "Đánh giá",
+    "question": "Group DRO đã giải quyết mọi câu hỏi công bằng chưa?",
+    "answer": "Chưa. Còn định nghĩa nhóm, chất lượng dữ liệu, loại hậu quả, quyền tiếp cận và nguyên tắc phân phối. Mục tiêu toán chỉ phản ánh một lựa chọn cụ thể."
+  },
+  {
+    "chapter": 5,
+    "chapterName": "Feature phi tuyến và feature template",
+    "id": "5.1",
+    "level": "Ghi nhớ",
+    "question": "Feature template khác feature thế nào?",
+    "answer": "Template là quy tắc sinh một họ feature, còn feature cụ thể là một điều kiện/phép đo và có giá trị cho từng đầu vào."
+  },
+  {
+    "chapter": 5,
+    "chapterName": "Feature phi tuyến và feature template",
+    "id": "5.2",
+    "level": "Thông hiểu",
+    "question": "Vì sao mô hình chứa bình phương x vẫn được gọi tuyến tính?",
+    "answer": "Với feature cố định, score là tổng trọng số nhân feature nên tuyến tính theo trọng số, dù cong theo đầu vào."
+  },
+  {
+    "chapter": 5,
+    "chapterName": "Feature phi tuyến và feature template",
+    "id": "5.3",
+    "level": "Vận dụng",
+    "question": "Tính ví dụ w=(2;1;−0,2), feature tại x=3.",
+    "answer": "Feature là (1;3;9), dự đoán 2+3−1,8=3,2. Dấu hệ số bậc hai cho parabol mở xuống."
+  },
+  {
+    "chapter": 5,
+    "chapterName": "Feature phi tuyến và feature template",
+    "id": "5.4",
+    "level": "Phân tích",
+    "question": "Khóa vắng trong sparse vector có phải luôn là dữ liệu chưa biết?",
+    "answer": "Không. Theo quy ước ví dụ, khóa vắng là giá trị không. Giá trị thiếu cần mã hóa/quy tắc xử lý riêng."
+  },
+  {
+    "chapter": 5,
+    "chapterName": "Feature phi tuyến và feature template",
+    "id": "5.5",
+    "level": "Đánh giá",
+    "question": "Có nên thay ví dụ email bằng chuỗi dễ đếm hơn?",
+    "answer": "Không nếu mục tiêu bảo toàn ví dụ. Giữ bảng gốc, giải score theo bảng và nêu riêng tỷ lệ đếm lại với định nghĩa rõ."
+  },
+  {
+    "chapter": 6,
+    "chapterName": "Mạng nơ-ron, activation và forward pass",
+    "id": "6.1",
+    "level": "Ghi nhớ",
+    "question": "Một lớp mạng truyền thẳng tính hai bước gì?",
+    "answer": "Nhân ma trận cộng bias tạo tiền kích hoạt, rồi áp dụng activation. Đầu ra này làm đầu vào lớp tiếp."
+  },
+  {
+    "chapter": 6,
+    "chapterName": "Mạng nơ-ron, activation và forward pass",
+    "id": "6.2",
+    "level": "Thông hiểu",
+    "question": "Vì sao chồng affine không thay thế được phi tuyến?",
+    "answer": "Phép hợp các affine vẫn là affine. Không tạo được lớp hàm cần để giải XOR theo đầu vào gốc."
+  },
+  {
+    "chapter": 6,
+    "chapterName": "Mạng nơ-ron, activation và forward pass",
+    "id": "6.3",
+    "level": "Vận dụng",
+    "question": "Trong ví dụ x=(1;2), bias (0;−2), lớp ẩn cho gì?",
+    "answer": "Tiền kích hoạt là (3;−1), qua ReLU thành (3;0). Logit đầu ra là hai và sigmoid khoảng 0,8808."
+  },
+  {
+    "chapter": 6,
+    "chapterName": "Mạng nơ-ron, activation và forward pass",
+    "id": "6.4",
+    "level": "Phân tích",
+    "question": "Một nút ReLU bị chặn ở một mẫu đã là dying ReLU chưa?",
+    "answer": "Chưa. Nó có thể nhận gradient ở mẫu khác. Cần xét tình trạng liên tục không hoạt động trên dữ liệu liên quan."
+  },
+  {
+    "chapter": 6,
+    "chapterName": "Mạng nơ-ron, activation và forward pass",
+    "id": "6.5",
+    "level": "Đánh giá",
+    "question": "Chọn sigmoid hay softmax cho phân loại nhiều lớp loại trừ nhau?",
+    "answer": "Thường dùng softmax để tạo phân phối có tổng một trên các lớp loại trừ. Nhiều nhãn độc lập là một thiết lập khác, cần loss phù hợp."
+  },
+  {
+    "chapter": 7,
+    "chapterName": "Lan truyền ngược và tối ưu mạng",
+    "id": "7.1",
+    "level": "Ghi nhớ",
+    "question": "Nguyên tắc gradient trên nhiều nhánh là gì?",
+    "answer": "Nhân với đạo hàm cục bộ dọc từng đường và cộng các đóng góp khi một biến ảnh hưởng qua nhiều nhánh."
+  },
+  {
+    "chapter": 7,
+    "chapterName": "Lan truyền ngược và tối ưu mạng",
+    "id": "7.2",
+    "level": "Thông hiểu",
+    "question": "Vì sao cần lưu forward và chưa cập nhật giữa backward?",
+    "answer": "Đạo hàm cục bộ dùng giá trị forward của cùng bộ tham số. Cập nhật giữa chừng làm các gradient không còn thuộc cùng hàm tại một điểm."
+  },
+  {
+    "chapter": 7,
+    "chapterName": "Lan truyền ngược và tối ưu mạng",
+    "id": "7.3",
+    "level": "Vận dụng",
+    "question": "Với J=x²+3x, tại x=2, gradient?",
+    "answer": "Hai nhánh góp 2x=4 và ba, tổng bằng bảy. Giá trị J bằng mười là đại lượng khác gradient."
+  },
+  {
+    "chapter": 7,
+    "chapterName": "Lan truyền ngược và tối ưu mạng",
+    "id": "7.4",
+    "level": "Phân tích",
+    "question": "Tại sao đầu ra bình phương–tuyến tính không dùng p−y?",
+    "answer": "Đạo hàm theo score bằng hai lần phần dư. p−y là rút gọn của sigmoid kết hợp BCE với nhãn 0/1."
+  },
+  {
+    "chapter": 7,
+    "chapterName": "Lan truyền ngược và tối ưu mạng",
+    "id": "7.5",
+    "level": "Đánh giá",
+    "question": "Kiểm chứng một bước học đúng nên làm gì?",
+    "answer": "Kiểm tra kích thước, các đạo hàm và dấu, tính lại forward bằng tham số mới. Loss giảm ở mẫu chỉ là bằng chứng cục bộ, chưa chứng minh test cải thiện."
+  },
+  {
+    "chapter": 8,
+    "chapterName": "Lập trình khả vi và CNN",
+    "id": "8.1",
+    "level": "Ghi nhớ",
+    "question": "Hai đặc điểm giúp CNN tận dụng cấu trúc ảnh?",
+    "answer": "Kết nối cục bộ và chia sẻ trọng số của bộ lọc qua nhiều vị trí."
+  },
+  {
+    "chapter": 8,
+    "chapterName": "Lập trình khả vi và CNN",
+    "id": "8.2",
+    "level": "Thông hiểu",
+    "question": "Trải phẳng có làm mất giá trị pixel không?",
+    "answer": "Không về lưu trữ nếu chỉ đổi cách sắp xếp. Nhưng dense không tự áp đặt cấu trúc lân cận và chia sẻ tham số như CNN."
+  },
+  {
+    "chapter": 8,
+    "chapterName": "Lập trình khả vi và CNN",
+    "id": "8.3",
+    "level": "Vận dụng",
+    "question": "Tính góc trên phải của tích chập ví dụ.",
+    "answer": "Cửa sổ gồm 1,0,1,0. Nhân bộ lọc toàn một rồi cộng được hai. Kết quả toàn bản đồ là các hàng (4;2) và (2;1)."
+  },
+  {
+    "chapter": 8,
+    "chapterName": "Lập trình khả vi và CNN",
+    "id": "8.4",
+    "level": "Phân tích",
+    "question": "ReLU có đổi ma trận kết quả này không?",
+    "answer": "Không, mọi phần tử đều dương. Max pooling sau đó mới thu bản đồ 2×2 thành giá trị bốn."
+  },
+  {
+    "chapter": 8,
+    "chapterName": "Lập trình khả vi và CNN",
+    "id": "8.5",
+    "level": "Đánh giá",
+    "question": "So lớp dense 100 nút với conv 16 kernel có được gọi hoàn toàn tương đương?",
+    "answer": "Không. Phép đếm tham số minh họa cơ chế tiết kiệm, không chứng minh hai lớp có cùng chức năng hoặc cùng khả năng học."
+  },
+  {
+    "chapter": 9,
+    "chapterName": "Embedding, RNN và LSTM",
+    "id": "9.1",
+    "level": "Ghi nhớ",
+    "question": "Hidden state và cell state khác gì?",
+    "answer": "Hidden state là biểu diễn truyền ra ở bước hiện tại. LSTM có thêm cell state làm đường nhớ được các cổng điều tiết."
+  },
+  {
+    "chapter": 9,
+    "chapterName": "Embedding, RNN và LSTM",
+    "id": "9.2",
+    "level": "Thông hiểu",
+    "question": "Vì sao từ “đường” cần ngữ cảnh?",
+    "answer": "Mặt chữ giống nhau nhưng quan hệ với xe/cà phê đổi nghĩa. Embedding tĩnh một token không tự phân biệt được hai ngữ cảnh này."
+  },
+  {
+    "chapter": 9,
+    "chapterName": "Embedding, RNN và LSTM",
+    "id": "9.3",
+    "level": "Vận dụng",
+    "question": "Câu hỏi cha Tấm gặp chuyện gì lấy đáp án ở đâu?",
+    "answer": "Từ đoạn văn gốc, liên kết “ông” với cha Tấm và sự kiện trước qua đời, chọn “bệnh nặng”. Không cần đưa thêm dị bản ngoài nguồn."
+  },
+  {
+    "chapter": 9,
+    "chapterName": "Embedding, RNN và LSTM",
+    "id": "9.4",
+    "level": "Phân tích",
+    "question": "Gradient qua 19 lần co với hệ số 0,5 còn khoảng bao nhiêu?",
+    "answer": "[BỔ SUNG] Hệ số là 0,5^19, gần 1,9×10⁻⁶. Đây chỉ là minh họa tích co rút, không phải gradient đo được của RNN trong slide."
+  },
+  {
+    "chapter": 9,
+    "chapterName": "Embedding, RNN và LSTM",
+    "id": "9.5",
+    "level": "Đánh giá",
+    "question": "Khi phân loại cảm xúc câu, average luôn tốt nhất không?",
+    "answer": "Không. Nó dùng nhiều vị trí nhưng có thể loãng tín hiệu. Cần chọn collapse phù hợp cấu trúc mô hình, mask padding và kiểm chứng validation."
+  },
+  {
+    "chapter": 10,
+    "chapterName": "Attention và Transformer",
+    "id": "10.1",
+    "level": "Ghi nhớ",
+    "question": "Query, key, value có vai trò nào?",
+    "answer": "Query là nhu cầu truy vấn, key dùng so độ liên quan, value là nội dung được tổng hợp theo trọng số."
+  },
+  {
+    "chapter": 10,
+    "chapterName": "Attention và Transformer",
+    "id": "10.2",
+    "level": "Thông hiểu",
+    "question": "Attention và FFN khác gì trong Transformer?",
+    "answer": "Attention kết hợp giữa vị trí, FFN biến đổi riêng từng vị trí bằng cùng tham số. Residual/LayerNorm hỗ trợ luồng và thang giá trị."
+  },
+  {
+    "chapter": 10,
+    "chapterName": "Attention và Transformer",
+    "id": "10.3",
+    "level": "Vận dụng",
+    "question": "Score (0;0;0;2) cho trọng số lớn nhất bao nhiêu?",
+    "answer": "Vector thứ tư nhận e²/(3+e²), xấp xỉ 0,7112. Ba vector còn lại nhận khoảng 0,0963 mỗi vector."
+  },
+  {
+    "chapter": 10,
+    "chapterName": "Attention và Transformer",
+    "id": "10.4",
+    "level": "Phân tích",
+    "question": "Tại sao thêm mask tương lai khi dự đoán token sau?",
+    "answer": "Để mô hình không dùng đáp án tương lai trong tiền tố lúc huấn luyện. Không mask sẽ làm sai thiết lập dự đoán có điều kiện trước đó."
+  },
+  {
+    "chapter": 10,
+    "chapterName": "Attention và Transformer",
+    "id": "10.5",
+    "level": "Đánh giá",
+    "question": "Self-attention có sẵn thứ tự từ chỉ vì đầu vào là một chuỗi không?",
+    "answer": "Chưa đủ. Cần thông tin vị trí hoặc cơ chế tương đương. Phép attention thuần trên các vector nội dung không tự xác định thứ tự mong muốn."
+  },
+  {
+    "chapter": 11,
+    "chapterName": "BERT, mô hình ngôn ngữ và sinh chuỗi",
+    "id": "11.1",
+    "level": "Ghi nhớ",
+    "question": "Đầu Start/End của BERT QA xuất gì?",
+    "answer": "Điểm/xác suất theo vị trí bắt đầu và kết thúc span trong đoạn văn, không phải hai token mới tự sinh."
+  },
+  {
+    "chapter": 11,
+    "chapterName": "BERT, mô hình ngôn ngữ và sinh chuỗi",
+    "id": "11.2",
+    "level": "Thông hiểu",
+    "question": "Teacher forcing khác lúc sinh thế nào?",
+    "answer": "Train thường dùng token thật ở tiền tố. Lúc sinh, tiền tố chứa token mô hình đã chọn, nên một sai lựa chọn có thể ảnh hưởng các bước sau."
+  },
+  {
+    "chapter": 11,
+    "chapterName": "BERT, mô hình ngôn ngữ và sinh chuỗi",
+    "id": "11.3",
+    "level": "Vận dụng",
+    "question": "Sau tiền tố “Tôi thích nuôi”, sinh “mèo” rồi làm gì?",
+    "answer": "Ghép token vừa chọn vào tiền tố, tính lại hoặc tiếp tục trạng thái thích hợp để dự đoán token sau. Lặp đến điều kiện dừng."
+  },
+  {
+    "chapter": 11,
+    "chapterName": "BERT, mô hình ngôn ngữ và sinh chuỗi",
+    "id": "11.4",
+    "level": "Phân tích",
+    "question": "Mọi BERT đều có đúng 24 khối như hình?",
+    "answer": "Không. Hình minh họa một cấu hình, không định nghĩa số lớp chung của mọi biến thể BERT."
+  },
+  {
+    "chapter": 11,
+    "chapterName": "BERT, mô hình ngôn ngữ và sinh chuỗi",
+    "id": "11.5",
+    "level": "Đánh giá",
+    "question": "Dịch “Chiếc xe màu đỏ” có thể chỉ dùng phân phối vô điều kiện của câu tiếng Anh không?",
+    "answer": "Chưa phản ánh bài toán dịch. Đầu ra phải có điều kiện theo nguồn tiếng Việt, ngoài tiền tố đích đã sinh."
+  },
+  {
+    "chapter": 12,
+    "chapterName": "Tổng quát hóa và kiểm soát quá khớp",
+    "id": "12.1",
+    "level": "Ghi nhớ",
+    "question": "Sai số xấp xỉ do đâu?",
+    "answer": "Do lớp giả thuyết không chứa quy tắc tốt nhất trong không gian dự đoán rộng đang xét, ngay cả khi chọn tốt nhất trong lớp."
+  },
+  {
+    "chapter": 12,
+    "chapterName": "Tổng quát hóa và kiểm soát quá khớp",
+    "id": "12.2",
+    "level": "Thông hiểu",
+    "question": "Nhãn ngẫu nhiên chứng minh điểm gì?",
+    "answer": "Mô hình có thể khớp train mà không học tín hiệu tổng quát hóa hữu ích. Không suy rằng mọi mạng lớn luôn dự đoán kém."
+  },
+  {
+    "chapter": 12,
+    "chapterName": "Tổng quát hóa và kiểm soát quá khớp",
+    "id": "12.3",
+    "level": "Vận dụng",
+    "question": "Train loss giảm, validation thấp nhất ở epoch 20 rồi tăng: chọn mốc?",
+    "answer": "Giữ checkpoint tốt nhất theo validation, chẳng hạn epoch 20 trong bảng minh họa, không mặc định lấy mốc cuối."
+  },
+  {
+    "chapter": 12,
+    "chapterName": "Tổng quát hóa và kiểm soát quá khớp",
+    "id": "12.4",
+    "level": "Phân tích",
+    "question": "Tăng L2 mãi có luôn tốt?",
+    "answer": "Không. L2 lớn hạn chế trọng số nhưng có thể làm mô hình không khớp quy luật quan trọng. Cần chọn hệ số trên validation."
+  },
+  {
+    "chapter": 12,
+    "chapterName": "Tổng quát hóa và kiểm soát quá khớp",
+    "id": "12.5",
+    "level": "Đánh giá",
+    "question": "Chênh lệch tới mô hình tốt nhất trong lớp có luôn thuần do ít dữ liệu?",
+    "answer": "Không nếu tối ưu chưa tốt. Cần phân biệt ảnh hưởng ước lượng và sai số tối ưu, đồng thời nêu quy ước phân rã đang dùng."
+  },
+  {
+    "chapter": 13,
+    "chapterName": "Phương pháp thực nghiệm và phân tích lỗi",
+    "id": "13.1",
+    "level": "Ghi nhớ",
+    "question": "Test dùng lúc nào?",
+    "answer": "Sau khi chốt cấu hình và quy trình phát triển, để đánh giá cuối trên dữ liệu chưa tham gia lựa chọn."
+  },
+  {
+    "chapter": 13,
+    "chapterName": "Phương pháp thực nghiệm và phân tích lỗi",
+    "id": "13.2",
+    "level": "Thông hiểu",
+    "question": "Vì sao fit chuẩn hóa trong từng fold?",
+    "answer": "Thống kê phải chỉ học từ phần train của lượt đó. Dùng toàn bộ dữ liệu làm thông tin validation rò vào quy trình."
+  },
+  {
+    "chapter": 13,
+    "chapterName": "Phương pháp thực nghiệm và phân tích lỗi",
+    "id": "13.3",
+    "level": "Vận dụng",
+    "question": "Chữ số ba đúng 79/91, recall là gì?",
+    "answer": "79 chia 91 ≈ 0,8681, tức 86,81%. Đây là recall lớp ba, không phải precision hay accuracy tổng."
+  },
+  {
+    "chapter": 13,
+    "chapterName": "Phương pháp thực nghiệm và phân tích lỗi",
+    "id": "13.4",
+    "level": "Phân tích",
+    "question": "Accuracy 96,89% có cho biết lớp ba tốt như lớp khác không?",
+    "answer": "Không. Cần xem hàng/cột nhầm lẫn. Chính ví dụ cho recall lớp ba thấp hơn con số tổng thể."
+  },
+  {
+    "chapter": 13,
+    "chapterName": "Phương pháp thực nghiệm và phân tích lỗi",
+    "id": "13.5",
+    "level": "Đánh giá",
+    "question": "Có nên liên tục thử cấu hình rồi chọn theo cùng test?",
+    "answer": "Không. Test đã trở thành công cụ lựa chọn và điểm báo cáo bị thiên lệch. Dùng validation/CV, giữ test cho đánh giá cuối."
+  },
+  {
+    "chapter": 14,
+    "chapterName": "K-means và phân nhóm khách hàng",
+    "id": "14.1",
+    "level": "Ghi nhớ",
+    "question": "K-means lặp hai bước gì?",
+    "answer": "Giữ tâm để gán mỗi điểm về tâm gần nhất, rồi giữ phép gán để cập nhật tâm bằng trung bình."
+  },
+  {
+    "chapter": 14,
+    "chapterName": "K-means và phân nhóm khách hàng",
+    "id": "14.2",
+    "level": "Thông hiểu",
+    "question": "Vì sao tâm là trung bình?",
+    "answer": "Đạo hàm tổng bình phương khoảng cách trong một cụm bằng hai lần tổng tâm trừ điểm. Cho bằng không giải ra trung bình."
+  },
+  {
+    "chapter": 14,
+    "chapterName": "K-means và phân nhóm khách hàng",
+    "id": "14.3",
+    "level": "Vận dụng",
+    "question": "Dữ liệu 0,2,10,12, tâm 0 và 10: bước đầu?",
+    "answer": "Gán (0,2) và (10,12). Tâm mới một và mười một. Loss từ tám giảm xuống bốn, phép gán sau đó không đổi."
+  },
+  {
+    "chapter": 14,
+    "chapterName": "K-means và phân nhóm khách hàng",
+    "id": "14.4",
+    "level": "Phân tích",
+    "question": "Vì sao không chọn K chỉ theo loss nhỏ nhất?",
+    "answer": "Thêm tâm thường giảm loss. Nếu mỗi điểm có một tâm thì loss có thể bằng không nhưng không còn tóm tắt có ích."
+  },
+  {
+    "chapter": 14,
+    "chapterName": "K-means và phân nhóm khách hàng",
+    "id": "14.5",
+    "level": "Đánh giá",
+    "question": "Các màu PCA có đủ để đặt chiến lược chăm sóc khách hàng?",
+    "answer": "Chưa. Cần thống kê RFM của cụm, ý nghĩa kinh doanh, độ ổn định và kiểm tra trong không gian đặc trưng, không chỉ hình chiếu."
+  },
+  {
+    "chapter": 15,
+    "chapterName": "Liên chương",
+    "id": "LC1",
+    "level": "Tổng hợp và đánh giá",
+    "question": "E15. Bài liên chương: chọn mô hình và mục tiêu",
+    "answer": "Tình huống\n\n[VÍ DỤ BỔ SUNG] Một hệ thống phân loại có accuracy tổng thể cao nhưng nhóm ít mẫu chịu lỗi lớn. Nhóm phát triển đề xuất tăng số lớp mạng, dùng Group DRO và chọn cấu hình bằng test. Hãy phân tích ba đề xuất.\n\n Hướng giải\n\nTách ba câu hỏi: khả năng biểu diễn, mục tiêu tối ưu, quy trình đánh giá. Không gán một giải pháp cho mọi loại lỗi.\n\n Lời giải\n\n1. Tăng độ sâu: có thể giúp nếu mô hình thiếu khả năng biểu diễn, nhưng chưa chứng minh giảm chênh lệch nhóm. Cũng có thể tăng quá khớp khi nhóm ít dữ liệu.\n2. Group DRO: trực tiếp đổi mục tiêu sang loss nhóm tệ nhất. Cần định nghĩa nhóm và đủ dữ liệu để ước lượng loss đáng tin, không tự bảo đảm mọi nguyên tắc công bằng.\n3. Chọn bằng test: làm sai vai trò test. Chọn cấu hình và checkpoint trên validation/CV, đánh giá test khi đã chốt. Nên báo cả metric chung và từng nhóm.\n\n Kế hoạch có thể kiểm tra\n\nLập baseline, phân tích loại lỗi theo nhóm, thử thay đổi có mục tiêu, giữ quy trình chia dữ liệu nhất quán. Nếu cùng một người có nhiều mẫu, chia theo người khi cần để tránh thông tin liên quan lọt hai phía. Sau đó so validation theo cả trung bình lẫn nhóm, chốt và đánh giá test.\n\n Kết luận cần nhớ\n\nKiến trúc, hàm mục tiêu và đánh giá là ba đòn bẩy riêng. Một thay đổi tốt trên train hoặc trên một metric chưa chứng minh tốt trong mọi nhóm và mọi bối cảnh sử dụng."
+  },
+  {
+    "chapter": 15,
+    "chapterName": "Liên chương",
+    "id": "LC2",
+    "level": "Tổng hợp và đánh giá",
+    "question": "E16. Bài liên chương: chuỗi, gradient và tổng quát hóa",
+    "answer": "Tình huống\n\n[VÍ DỤ BỔ SUNG] Một mô hình phân loại cảm xúc lấy embedding tĩnh, qua RNN một chiều, chọn hidden state đầu tiên và train tới khi loss rất nhỏ. Với câu dài, kết quả trên dữ liệu mới kém. Có thể kết luận “embedding không học được ý nghĩa” không?\n\n Lời giải phân tích\n\nChưa đủ căn cứ. Cần tách các nguyên nhân có thể kiểm chứng:\n\n- Collapse: hidden state đầu tiên của RNN một chiều chưa thấy token phía sau, nên đầu phân loại có thể bỏ phần lớn câu dù cell được trải qua nhiều bước.\n- Phụ thuộc dài: khi dùng trạng thái cuối, Simple RNN vẫn có thể gặp gradient nhỏ hoặc lớn qua nhiều bước. LSTM hoặc attention là các cách tổ chức thông tin khác cần đánh giá.\n- Quá khớp: train loss thấp không chứng minh generalization. Cần theo dõi validation, điều chuẩn và checkpoint.\n- Khác phân phối/tiền xử lý: kiểm tra chiều dài câu, token lạ và mask padding giữa train với dữ liệu sử dụng.\n\n Một chuỗi thay đổi có mục đích\n\nKiểm tra luồng thông tin của collapse trước. So last/average hoặc một đại diện phù hợp trên validation, giữ phần khác cố định khi có thể. Sau đó thử cấu trúc xử lý phụ thuộc dài nếu lỗi còn liên quan. Mỗi bước cần được giải thích bằng giả thuyết và metric.\n\n Liên hệ Transformer\n\nSelf-attention tạo vector có ngữ cảnh ở mỗi vị trí, nhưng vẫn cần chọn cách đại diện cả câu nếu tác vụ là phân loại câu. Không nhầm self-attention với phép tự thu gọn chuỗi."
+  }
+]
