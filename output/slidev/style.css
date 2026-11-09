@@ -1,0 +1,129 @@
+/* Typographic system for the operating-systems course deck. */
+:root {
+  --ink: #173438;
+  --muted: #506969;
+  --teal: #186b60;
+  --paper: #f4f7f1;
+  --line: #c9d7cc;
+  --sky: #e5edf8;
+  --sand: #f3e7ce;
+}
+.slidev-layout {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 38px 65px 50px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 22px;
+  line-height: 1.47;
+  overflow: hidden;
+}
+.slidev-layout h1 {
+  color: var(--ink);
+  font-family: Cambria, Georgia, serif;
+  font-weight: 700;
+  font-size: 44px;
+  letter-spacing: -.024em;
+  line-height: 1.12;
+  margin: 10px 0 25px;
+  max-width: 100%;
+}
+.slidev-layout h2 {
+  font-size: 23px;
+  color: var(--teal);
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+.slidev-layout p { margin: 0 0 14px; }
+.slidev-layout ul, .slidev-layout ol { margin: 0 0 17px 1.12em; }
+.slidev-layout li { padding-left: 3px; margin-bottom: 9px; }
+.slidev-layout strong { font-weight: 750; }
+.slidev-layout code:not(pre code) {
+  background: #e3ece5;
+  color: #23524e;
+  font: 0.86em Consolas, monospace;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+.slidev-layout table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 19px;
+  line-height: 1.32;
+  margin: 10px 0 18px;
+}
+.slidev-layout th { background: #22554f; color: #fff; text-align: left; }
+.slidev-layout td, .slidev-layout th { padding: 9px 13px; border-bottom: 1px solid var(--line); }
+.slidev-layout tbody tr:nth-child(odd) { background: #edf3eb; }
+.slidev-layout a:not(.shortcut) { color: var(--teal); text-underline-offset: 3px; }
+.slidev-layout .slidev-code { font-size: 17px; line-height: 1.4; }
+.track {
+  display: flex; justify-content: space-between; gap: 12px;
+  align-items: baseline; border-bottom: 1px solid var(--line);
+  padding-bottom: 9px; color: var(--muted); font-size: 14px; font-weight: 650;
+}
+.track span:first-child { color: var(--teal); }
+.deck-cover {
+  height: 100%; display: grid; grid-template-columns: 1.35fr .85fr;
+  align-items: center; gap: 56px; padding-bottom: 35px;
+}
+.deck-cover h1 { font-size: 82px; margin: 10px 0 14px; line-height: 1; }
+.deck-cover .lead { font-size: 29px; line-height: 1.24; }
+.deck-cover .cover-id { color: var(--teal); font-size: 15px; font-weight: 750; }
+.cover-stack { display: grid; gap: 10px; }
+.cover-stack > div { padding: 15px 20px; border-radius: 10px; background: #e7efe6; }
+.cover-stack > div:nth-child(3) { background: var(--sky); }
+.cover-stack > div:nth-child(5) { background: var(--sand); }
+.cover-stack small { display: block; color: var(--muted); font-size: 15px; }
+.cover-stack .connector { font-size: 13px; color: var(--muted); padding-left: 24px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+.cols > div + div { border-left: 1px solid var(--line); padding-left: 27px; }
+.flow { display: flex; align-items: stretch; gap: 13px; margin: 19px 0; }
+.flow > div { flex: 1; padding: 13px 16px; background: #e6efe6; border-radius: 10px; }
+.flow > span { align-self: center; color: var(--teal); font-weight: 750; }
+.flow small { display: block; color: var(--muted); font-size: 16px; }
+.resource-links { display: flex; flex-wrap: wrap; gap: 12px 30px; }
+.note, .answer, .formula {
+  padding: 13px 19px; margin: 14px 0;
+  border-radius: 10px; background: #e5efe7;
+  font-size: 20px; line-height: 1.4;
+}
+.note { padding-block: 8px; }
+.note p:last-child, .answer p:last-child, .formula p:last-child { margin-bottom: 0; }
+.answer { background: var(--sand); }
+.formula { background: var(--sky); }
+.step { display: grid; grid-template-columns: 37px 1fr; gap: 12px; align-items: baseline; margin: 10px 0; }
+.step b:first-child { color: var(--teal); font-variant-numeric: tabular-nums; }
+.shortcuts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 38px; }
+.shortcut { display: flex; gap: 13px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.shortcut span { font-size: 15px; color: var(--teal); font-weight: 800; }
+.shortcut:hover strong, .shortcut:focus-visible strong { text-decoration: underline; }
+.bytes {
+  font: 17px/1.55 Consolas, monospace;
+  padding: 10px 15px;
+  background: #e4ece5;
+  white-space: pre;
+}
+.compact { font-size: 19px; }
+.slidev-layout .footnote { font-size: 15px; color: var(--muted); }
+.slidev-vclick-hidden { pointer-events: none; }
+
+.slidev-layout h1 + p, .slidev-layout .deck-cover h1 + p { opacity: 1; }
+
+
+.slidev-layout p:has(> br) { line-height: 1.48; }
+.read-lines { display: grid; gap: 5px; margin: 0 0 16px; }
+.slidev-layout .read-lines p { margin: 0; line-height: 1.36; }
+.equation {
+  font-family: "Cambria Math", Cambria, Georgia, serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: .01em;
+}
+.slidev-layout var { font-style: normal; }
+.formula .equation, .formula.equation { font-size: 23px; }
+.formula-legend { font-size: 16px; color: var(--muted); margin-top: 7px; }
+.equation-row {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 18px; font-family: "Cambria Math", Cambria, Georgia, serif;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.answer:has(.equation-row) p { margin-bottom: 8px; }

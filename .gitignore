@@ -1,0 +1,14 @@
+/*
+!/.github/
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/output/
+/output/*
+!/output/markdown/
+!/output/slidev/
+/output/slidev/dist/
+/output/slidev/node_modules/
+/output/slidev/.slidev/
+/output/slidev/.env*
+/output/slidev/public/os_doc.pdf
